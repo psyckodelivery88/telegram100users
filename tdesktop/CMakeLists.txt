@@ -7,11 +7,16 @@
 cmake_minimum_required(VERSION 3.25...3.31)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/Telegram/ThirdParty/libtgvoip/cmake")
+set(CMAKE_MODULE_PATH
+    "${CMAKE_CURRENT_SOURCE_DIR}/Telegram/ThirdParty/libtgvoip/cmake"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Telegram/cmake"
+)
+
+message(STATUS "CMAKE_MODULE_PATH=${CMAKE_MODULE_PATH}")
 
 include(validate_special_target.cmake)
 include(version.cmake)
-desktop_app_parse_version(Telegram/build/version)
+desktop_app_parse_version()
 
 set(project_langs C CXX)
 if (APPLE)
