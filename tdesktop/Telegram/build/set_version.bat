@@ -1,9 +1,8 @@
 @echo OFF
 
-setlocal enabledelayedexpansion
 set "FullScriptPath=%~dp0"
 
-python %FullScriptPath%configure.py %*
+python %FullScriptPath%set_version.py %1
 if %errorlevel% neq 0 goto error
 
 exit /b
