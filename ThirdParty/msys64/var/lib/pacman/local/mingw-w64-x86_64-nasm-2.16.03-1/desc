@@ -1,0 +1,37 @@
+%NAME%
+mingw-w64-x86_64-nasm
+
+%VERSION%
+2.16.03-1
+
+%BASE%
+mingw-w64-nasm
+
+%DESC%
+An 80x86 assembler designed for portability and modularity (mingw-w64)
+
+%URL%
+https://www.nasm.us
+
+%ARCH%
+any
+
+%BUILDDATE%
+1714889036
+
+%INSTALLDATE%
+1747897291
+
+%PACKAGER%
+CI (msys2/msys2-autobuild/9c7e8d31/8956134127)
+
+%SIZE%
+2805322
+
+%LICENSE%
+BSD
+
+%VALIDATION%
+sha256
+pgp
+

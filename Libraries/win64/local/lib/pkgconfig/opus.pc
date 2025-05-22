@@ -1,0 +1,16 @@
+# Opus codec reference implementation pkg-config file
+
+prefix=C:/TBuild/Libraries/win64/local
+exec_prefix=C:/TBuild/Libraries/win64/local
+libdir=C:/TBuild/Libraries/win64/local/lib
+includedir=C:/TBuild/Libraries/win64/local/include
+
+Name: Opus
+Description: Opus IETF audio codec ( build)
+URL: https://opus-codec.org/
+Version: 1.5.2
+Requires:
+Conflicts:
+Libs: -LC:/TBuild/Libraries/win64/local/lib -lopus
+Libs.private: 
+Cflags: -IC:/TBuild/Libraries/win64/local/include/opus
