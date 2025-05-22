@@ -1,33 +1,27 @@
-name: Build TDesktop
+name: Build Telegram Desktop
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clone this repo
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Install dependencies
-      run: |
-        sudo apt update
-        sudo apt install -y \
-          git cmake gperf ccache \
-          build-essential \
-          qt6-base-dev qt6-tools-dev qt6-tools-dev-tools \
-          libopenal-dev libxcb-keysyms1-dev libxrandr-dev \
-          libxi-dev libxss-dev zlib1g-dev liblzma-dev \
-          libxxf86vm-dev libgl1-mesa-dev libssl-dev
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake build-essential pkg-config qtbase5-dev qttools5-dev-tools libssl-dev
 
-    - name: Build TDesktop
-      run: |
-        mkdir build
-        cd build
-        cmake ..
-        cmake --build . --config Release -j$(nproc)
+      - name: Configure and build
+        run: |
+          cmake -S tdesktop -B build
+          cmake --build build --config Release
