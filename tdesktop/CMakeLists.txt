@@ -12,10 +12,15 @@ set(CMAKE_MODULE_PATH
     "${CMAKE_CURRENT_SOURCE_DIR}/cmake"
 )
 
-message(STATUS "CMAKE_MODULE_PATH=${CMAKE_MODULE_PATH}")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/Telegram/ThirdParty/libtgvoip/cmake")
+message(STATUS "FINAL MODULE PATH = ${CMAKE_MODULE_PATH}")
 
-include(validate_special_target.cmake)
-include(version.cmake)
+message(STATUS "SRC DIR = ${CMAKE_CURRENT_SOURCE_DIR}")
+message(STATUS "MODULE PATH = ${CMAKE_MODULE_PATH}")
+
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/validate_special_target.cmake")
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/version.cmake")
 desktop_app_parse_version()
 
 set(project_langs C CXX)
